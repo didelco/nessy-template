@@ -5,12 +5,15 @@ var io = require('socket.io')(server);
 
 server.listen(10111);
 
-
+console.log("hi");
 app.use(express.static('public'));
 
-io.on('connection', function (socket) {
-  socket.emit('news', { hello: 'world' });
-  socket.on('my other event', function (data) {
-    console.log(data);
-  });
-});
+
+function sendfake(){
+	io.emit('temp', '25');
+	io.emit('humd', 30+Math.floor(Math.random()*10));
+	setTimeout(sendfake,5000);
+	console.log('sended');
+};
+
+sendfake();

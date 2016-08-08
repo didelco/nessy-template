@@ -1,11 +1,11 @@
   var socket = io();
   socket.on('temp', function(msg){
   	console.log("temperature "+msg);
-  	$('.temp').text(msg);
+  	$('.temp').text(msg+"º");
   });
   socket.on('humd', function(msg){
   	console.log("Humidity "+msg);
-  	$('.humd').text(msg);
+  	$('.humd').text(msg+"%");
   });
   socket.on('light', function(msg){
   	console.log("light " + msg);

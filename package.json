@@ -8,6 +8,8 @@
   "dependencies": {
     "express": "~4.13.4",
     "socket.io": "~4.0.1",
+    "jade":"~1.11.0",
+    "chart.js":"~2.2.1",
     "serialport": "~1.4.8"
   }
 }

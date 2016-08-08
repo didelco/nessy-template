@@ -8,31 +8,58 @@ var mongoose = require('mongoose');
 server.listen(10111);
 app.use(express.static('public'));
 
+
 // Hello to people
 console.log("hello, you are now connected to the server, Wellcome!");
 
 //Send fakes messages
 function sendfake(){
-	io.emit('temp', '25');
-	io.emit('humd', 30+Math.floor(Math.random()*10));
-	setTimeout(sendfake,5000);
-	console.log('sended');
-};
-sendfake();
+	var fakeTemp = 19.3 + (Math.random()*10);
+	var fakeHumd = 30+Math.floor(Math.random()*10);
+	io.emit('temp', fakeTemp);
+	io.emit('humd', fakeHumd);
+	var t = new values({ 
+		sensor: 'temp',
+		value:fakeTemp
+	});
+	var h = new values({ 
+		sensor: 'humd',
+		value:fakeHumd
+	});
 
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log("We are also connected to mongodb database"); 
-});
+	t.save(function (err, t) {
+		if (err) return console.error(err);
+		console.log("temp saved")
+	});
+
+	h.save(function (err, t) {
+		if (err) return console.error(err);
+		console.log("humd saved")
+	});
+
+	console.log('sended');
+	setTimeout(sendfake,5000);
+};
 
 
 //Mongo DB connection with mongoose
 mongoose.connect('mongodb://localhost/test');
 
-var sensorSchema = new Schema({
-  sensor:  String,
-  value: String,
-  date: { type: Date, default: Date.now }
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+	console.log("We are also connected to mongodb database"); 
 });
-var sensor = mongoose.model('sensor', sensorSchema);
+
+
+var valuesSchema = mongoose.Schema({
+	sensor:  String,
+	value: String,
+	date: { type: Date, default: Date.now }
+});
+
+var values = mongoose.model('values', valuesSchema);
+
+
+//Init fake
+sendfake();

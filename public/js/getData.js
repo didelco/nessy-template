@@ -1,3 +1,5 @@
+  //Sended data from arduino to website
+
   var socket = io();
   socket.on('temp', function(msg){
   	console.log("temperature "+msg);

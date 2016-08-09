@@ -14,7 +14,7 @@ console.log("hello, you are now connected to the server, Wellcome!");
 
 //Send fakes messages
 function sendfake(){
-	var fakeTemp = 19.3 + (Math.random()*10);
+	var fakeTemp = Math.floor(19.3 + (Math.random()*10));
 	var fakeHumd = 30+Math.floor(Math.random()*10);
 	io.emit('temp', fakeTemp);
 	io.emit('humd', fakeHumd);

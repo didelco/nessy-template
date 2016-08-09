@@ -1,0 +1,40 @@
+.txt-1 {
+  color: rgb(232,125,122);
+}
+
+.txt-2{
+	color:rgb(56, 75, 114);
+}
+
+.txt-3{
+	color:rgb(254, 246, 217);
+}
+
+.txt-w {
+  color: #ffffff;
+}
+
+.bg-1 {
+  background-color: rgb(232,125,122);
+}
+
+.bg-2 {
+  background-color: rgb(56, 75, 114);
+}
+
+.bg-3 {
+  background-color: rgb(254, 246, 217);
+}
+.bg-dark {
+  background-color: #222222;
+  color: white;
+}
+
+.btn-default {
+  color: #222222;
+  background-color: white;
+  border-color: white;
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+}

@@ -1,128 +1,119 @@
-/*!
- * Start Bootstrap - Creative v1.1.1 (http://startbootstrap.com/template-overviews/creative)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
- */
- html,
- body {
-  height: 100%;
-  width: 100%;
+
+/*****************************************************************
+  General
+  *****************************************************************/
+  html, body {
+    height: 100%;
+    width: 100%;
     margin: 0px;
-  padding: 0px;
-}
+    padding: 0px;
+  }
 
-body {
-  font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
-}
+  body {
+    font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+  }
 
-hr {
-  border-color: #F05F40;
-  border-width: 3px;
-  max-width: 50px;
-}
-hr.light {
-  border-color: white;
-}
-a {
-  -webkit-transition: all 0.35s;
-  -moz-transition: all 0.35s;
-  transition: all 0.35s;
-  color: #F05F40;
-}
-a:hover,
-a:focus {
-  color: #eb3812;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
-}
-p {
-  font-size: 16px;
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
+  a {
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    transition: all 0.35s;
+    color: #F05F40;
+  }
 
-.text-faded {
-  color: rgba(255, 255, 255, 0.7);
-}
-section {
-  padding: 15px 0;
-}
-.no-padding {
-  padding: 0;
-}
+  a:hover,a:focus {
+    color: #eb3812;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  }
 
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+/*****************************************************************
+  SPECIAL CLASSES
+  *****************************************************************/
+
+    .no-padding {
+    padding: 0;
+  }
+ 
+   .clear{
+    width: 100%;
+    clear: both;
+  }
+  .no-gutter > [class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+
+/*****************************************************************
+  SECTIONS
+  *****************************************************************/
 header {
-  position: relative;
-  width: 100%;
-  min-height: 100px;
-  background-color: #000000;
-  background-image: url('../img/last.jpg');
-  background-repeat:no-repeat;
-  background-size:cover;
-  background-position: center; 
-  color: white;
-}
+    position: relative;
+    width: 100%;
+    min-height: 100px;
+    background-color: #000000;
+    background-image: url('../img/last.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position: center; 
+    color: white;
+  }
 
-.row {
-  margin:0px;
-}
+  section {
+    padding: 15px 0;
+  }
 
-.container{
-  text-align: center;
-  margin:0px 50px;
-} 
+ .section-heading {
+    margin-top: 0;
+  }
 
-.section-heading {
-  margin-top: 0;
-}
-.service-box {
-  float: left;
-  margin: 50px 20px 0;
-}
+  .row {
+    margin:0px;
+  }
 
-.descdata{
-  font-size: 0.8em;
-  height: 60px;
-  width: 60%;
-  margin: 10px auto;
-}
- h3.data{
-  font-size: 3em;
- }
+  .container{
+    text-align: center;
+    margin:0px 50px;
+  } 
 
- .clear{
-  width: 100%;
-  clear: both;
- }
+  .service-box {
+    float: left;
+    margin: 50px 20px 0;
+  }
 
-.call-to-action h2 {
-  margin: 0 auto 20px;
-}
-.no-gutter > [class*='col-'] {
-  padding-right: 0;
-  padding-left: 0;
-}
+  .descdata{
+    font-size: 0.8em;
+    height: 60px;
+    width: 60%;
+    margin: 10px auto;
+  }
+  h3.data{
+    font-size: 3em;
+  }
 
-::selection {
-  color: white;
-  text-shadow: none;
-  background: #222222;
-}
+/*****************************************************************
+  Elements
+  *****************************************************************/
+  ::selection {
+    color: white;
+    text-shadow: none;
+    background: #222222;
+  }
 
-img::selection {
-  color: white;
-  background: transparent;
-}
-img::-moz-selection {
-  color: white;
-  background: transparent;
-}
-body {
-  webkit-tap-highlight-color: #222222;
-}
+  img::selection {
+    color: white;
+    background: transparent;
+  }
+  img::-moz-selection {
+    color: white;
+    background: transparent;
+  }
+  body {
+    webkit-tap-highlight-color: #222222;
+  }

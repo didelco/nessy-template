@@ -38,7 +38,7 @@ function sendfake(){
 	});
 
 	console.log('sended');
-	setTimeout(sendfake,5000);
+	setTimeout(sendfake,10000);
 };
 
 
@@ -49,8 +49,8 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
 	console.log("We are also connected to mongodb database"); 
+	showTempVal(7,12);
 });
-
 
 var valuesSchema = mongoose.Schema({
 	sensor:  String,
@@ -60,6 +60,34 @@ var valuesSchema = mongoose.Schema({
 
 var values = mongoose.model('values', valuesSchema);
 
+function showTempVal(val0 , valn){
+	var i = val0;
+	var dateMin = new Date('2016,8,'+i);
+	var dateMax = new Date('2016,8,'+(i+1));
+	values.find({sensor:"temp", $and:[{ date:{$gte: dateMin}}, {date:{$lt: dateMax}}]}, function(err, values) {
+		if (err) throw err;
+		console.log("##################   Value: "+i+ "  "+ dateMin +" - "+dateMax);
+        media(i, valn, 0, values);
+	});
+};
+var suma =0;
+function media(val0, valn, n, values){
+	if (n < values.length){
+        //console.log(values[n].value+"-");
+        suma+=parseInt(values[n].value);
+        media(val0, valn, n+1, values);
+	}else{
+		if(val0<valn){
+			if(n>0){
+			console.log("suma: "+suma+"   nValores: "+n +"   Media: "+(suma/n));
+		}else{
+			console.log("Sin datos");
+		}
+			suma =0;
+			showTempVal(val0+1, valn);
+		}	
+	}
+}
 
 //Init fake
 sendfake();

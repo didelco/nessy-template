@@ -71,6 +71,7 @@ function showTempVal(val0 , valn){
 	});
 };
 var suma =0;
+
 function media(val0, valn, n, values){
 	if (n < values.length){
         //console.log(values[n].value+"-");

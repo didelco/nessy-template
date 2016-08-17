@@ -6,9 +6,21 @@ var mongoose = require('mongoose');
 
 //Init server
 server.listen(10111);
-app.use(express.static('public'));
+//app.use(express.static('public'));
 
+app.set('view engine', 'jade');
 
+app.get('/', function (req, res) {
+  res.render('index', { title: 'Hey', message: 'Hello there!', nVals: ["temp", "humd", "co2", "luz", "distancia", "movimiento"]});
+});
+
+app.get('/sensor/:val', function (req, res) {
+  if(req.params.val === "humedad"){
+  	  res.send("mojado");
+  } else{
+  	  res.send("404");
+  }
+});
 // Hello to people
 console.log("hello, you are now connected to the server, Wellcome!");
 

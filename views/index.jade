@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title!= nVals[0]
+  body
+    nav#mainNav
+      ul
+        li
+          a(class=page-scroll, href="#data") data
+        li
+          a(class=page-scroll, href="#info") info
+        li
+          a(class=page-scroll, href="#setting") setting
+    header#video(class="webcam")
+      .header-content
+        h1!= message
+    section#datalog(class ="bg-1 txt-2")
+      .container
+        .row
+          each val, index in nVals
+            h1!=val
+            #sensor(class="service-box, text-center")
+              i(class="fa fa-4x fa-fire sr-icons")
+                h3(class="data ")
+                  p(class="data-title")!=index
+                  p(class="text-muted descdata") Descripción
+
